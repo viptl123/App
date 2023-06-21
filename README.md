@@ -9,6 +9,8 @@ the only important ones are
     - the main or starting point of our code
 - firebase
     - is how we connect to the google firebase database
+- Components
+    - React components we make so we can use multiple times 
 
 
 
