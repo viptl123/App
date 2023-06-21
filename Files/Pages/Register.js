@@ -1,52 +1,57 @@
 import React from 'react';
+import {useState, useEffect} from 'react';
 import {Text, StyleSheet, View, TextInput, TouchableOpacity, KeyboardAvoidingView} from 'react-native';
-import {email, setEmail, password, setPassword, setIsSignedIn} from './LoginScreen';
+import  {setIsSignedIn, handleSignUp, email, setEmail, password, setPassword} from './LoginScreen';
 import {createUserWithEmailAndPassword} from 'firebase/auth';
 import SignOutButton from '../Components/SignOutButton';
+import { authentication } from '../firebase';
 
 
 
 
 const Register = ({navigation}) => {
 
-    function goToHomeScreen() {
-        navigation.navigate('Home');
-    }
+    
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
     const handleSignUp = () => {
         createUserWithEmailAndPassword(authentication, email,password)
         .then((re) => {
             console.log(re);
             setIsSignedIn(true);
-            goToHomeScreen();
+            this.goToHomeScreen;
         })
         .catch(re => alert(re.message))
     }
-
+    const goToHomeScreen =() => {
+        navigation.navigate('Home');
+    }
     return (
 
        <View>
-        <Text> Sign Up For FitApp</Text>
-        <TextInput placeholder="Email"
-        value ={email}
-        onChangeText ={text => setEmail(text)} 
-        style ={styles.input}
-        > 
-        </TextInput>
-        <TextInput placeholder="Password"
-        value ={password}
-        // text is a variable that takes whatevers inputed so we can do something with it
-        onChangeText ={text => setPassword(text)} 
-        style ={styles.input}
-        secureTextEntry
-        > 
-        </TextInput>
+            <Text> Sign Up For FitApp</Text>
+            <TextInput placeholder="Email"
+            value ={email}
+            onChangeText ={text => setEmail(text)} 
+            style ={styles.input}
+            > 
+            </TextInput>
+            <TextInput placeholder="Password"
+            value ={password}
+            // text is a variable that takes whatevers inputed so we can do something with it
+            onChangeText ={text => setPassword(text)} 
+            style ={styles.input}
+            secureTextEntry
+            > 
+            </TextInput>
 
-       <TouchableOpacity
-       style ={styles.button}
-       onPress ={handleSignUp}
-       >
-            <Text> Register</Text>
-       </TouchableOpacity>
+            <TouchableOpacity
+            style ={styles.button}
+            onPress ={handleSignUp}
+            >
+                    <Text> Register</Text>
+            </TouchableOpacity>
         
         </View>
     );

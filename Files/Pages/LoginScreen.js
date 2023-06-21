@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import React from 'react';
 import { authentication } from '../firebase';
 import {createUserWithEmailAndPassword, getAuth,signOut, signInWithEmailAndPassword} from 'firebase/auth';
-import {KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View, Button} from 'react-native';
+import {KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 
 
 
@@ -14,6 +14,18 @@ const Login = ({navigation}) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [isSignedIn, setIsSignedIn] = useState(false);
+    const handleSignUp = () => {
+        createUserWithEmailAndPassword(authentication, email,password)
+        .then((re) => {
+            console.log(re);
+            setIsSignedIn(true);
+            this.goToHomeScreen;
+        })
+        .catch(re => alert(re.message))
+    }
+    const goToHomeScreen =() => {
+        navigation.navigate('Home');
+    }
 
     const goToRegisterScreen = () =>{
         navigation.navigate('Register')        
