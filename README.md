@@ -1,6 +1,8 @@
 # Fitness App
 
-Most of these files are useless the only important ones are 
+Most of these files are useless as long as u have eveythihng setup in expo
+the only important ones are 
+
 - all files in pages
     - contains each of the screens we show and navigate
 - app.js
