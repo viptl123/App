@@ -69,7 +69,7 @@ const Login = ({navigation}) => {
             }
             
             
-
+        
         <Text style ={styles.header}> Welcome to FitApp</Text>
         <Text> Sign in</Text>
             <View style={styles.inputContainer}>
@@ -117,6 +117,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: '#FBD87F'
     },
     inputContainer: {
         width:'80%',

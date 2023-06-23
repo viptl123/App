@@ -27,9 +27,15 @@ const Register = ({navigation}) => {
     const goToHomeScreen =() => {
         navigation.navigate('Home');
     }
+
+
+
+
+
+
     return (
 
-       <View>
+       <View style ={styles.container}>
             <Text> Sign Up For FitApp</Text>
             <TextInput placeholder="Email"
             value ={email}
@@ -50,7 +56,7 @@ const Register = ({navigation}) => {
             style ={styles.button}
             onPress ={handleSignUp}
             >
-                    <Text> Register</Text>
+                    <Text style={styles.text}> Register</Text>
             </TouchableOpacity>
         
         </View>
@@ -63,9 +69,10 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        width: 100,
+        
         height: 500,
-        backgroundColor: '#0782F9',
+        //backgroundColor: '#03E4C6',
+        backgroundColor: '#f4f1bb',
     },
     inputContainer: {
         width:'80%',
@@ -77,6 +84,7 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         borderRadius: 10,
         marginTop: 5,
+        width: 200
     },
     buttonContainer: {
         width: '60%',
@@ -85,10 +93,11 @@ const styles = StyleSheet.create({
         marginTop: 40,
     },
     button: {
-        backgroundColor: '#0782F9',
-        width: '100%',
+        backgroundColor: '#ffd289',
+        width: 100,
         padding: 15,
         borderRadius: 10,
+        marginTop: 20,
     },
     buttonOutline: {
         backgroundColor: 'white',
@@ -111,10 +120,6 @@ const styles = StyleSheet.create({
     },
     header: {
         fontSize: 27,
-    }
-
-
-
-
-
+    },
+    
 });
