@@ -7,6 +7,7 @@ import LoginScreen from './Pages/LoginScreen';
 import 'react-native-gesture-handler';
 import HomeScreen from './Pages/HomeScreen';
 import Register from './Pages/Register';
+import WorkoutSelectScreen from './Pages/WorkoutSelectScreen';
 
 
 
@@ -20,6 +21,8 @@ export default function App() {
         <Stack.Screen options={{headerShown: false}} name="Login" component ={LoginScreen}/>
         <Stack.Screen name='Home' component={HomeScreen}/>
         <Stack.Screen name='Register' component ={Register}/>
+        <Stack.Screen name='WorkoutSelectScreen' component ={WorkoutSelectScreen}/>
+        
 
         
       </Stack.Navigator>
