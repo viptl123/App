@@ -37,8 +37,9 @@ const HomeScreen = ({navigation}) => {
 
           <TouchableOpacity 
           onPress ={nextScreen}
+          style ={styles.button}
           >
-            <Text>Next</Text>
+            <Text style ={styles.buttonText}>Next</Text>
           </TouchableOpacity>
     
         </View>
@@ -68,6 +69,19 @@ const styles = StyleSheet.create({
   },
   secondRow: {
     flexDirection: 'row'
+  },
+  button: {
+    backgroundColor: '#0782F9',
+    height: 50,
+    width: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 20,
+    
+  },
+  buttnText: {
+    textAlign: 'center',
+
   }
 });
 
